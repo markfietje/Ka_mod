@@ -43,7 +43,15 @@ Copyright (C) 2017  KaraWin
 #include "ClickEncoder.h"
 #include "addon.h"
 //#include "rda5807Task.h"
-
+#include "es8311.h"                                                                                                                                           │······
+#include "esp_log.h"                                                                                                                                          │······
+#include "audio_hal.h"                                                                                                                                        │······
+#include "unity.h"                                                                                                                                            │······
+#include "es8388.h"                                                                                                                                           │······
+#include "audio_player.h"                                                                                                                                     │······
+#include "audio_mem.h"                                                                                                                                        │······
+#include "board.h"                                                                                                                                            │······
+//#include "z138063.h"
 /* The event group allows multiple bits for each event*/
 //   are we connected  to the AP with an IP? */
 const int CONNECTED_BIT = 0x00000001;
@@ -883,6 +891,21 @@ void app_main()
 	const esp_partition_t *running = esp_ota_get_running_partition();
 	ESP_LOGI(TAG, "Running partition type %d subtype %d (offset 0x%08x)",
 			 running->type, running->subtype, running->address);
+	
+	// Add registry fix to create master clock
+	REG_WRITE(PIN_CTRL, 0xFF0);
+    PIN_FUNC_SELECT(PERIPHS_IO_MUX_GPIO0_U, FUNC_GPIO0_CLK_OUT1);
+        
+	// Initialise Lyra-T Mini Audio Codec
+	ESP_LOGI(TAG, "Start es8311 codec chip");
+    audio_hal_codec_config_t es8311_cfg = AUDIO_CODEC_DEFAULT_CONFIG();
+    es8311_codec_init(&es8311_cfg);
+    es8311_codec_config_i2s(es8311_cfg.codec_mode, &es8311_cfg.i2s_iface);
+    es8311_codec_ctrl_state(AUDIO_HAL_CODEC_MODE_DECODE, AUDIO_HAL_CTRL_START);
+    es8311_codec_set_voice_volume(50);
+	
+	
+	
 	// Initialize NVS.
 	err = nvs_flash_init();
 	if (err == ESP_ERR_NVS_NO_FREE_PAGES)
