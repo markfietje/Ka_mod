@@ -20,19 +20,13 @@ Copyright (C) 2017  KaraWin
 #include "addonu8g2.h"
 #include "spiram_fifo.h"
 #include "audio_renderer.h"
-
 #include "audio_player.h"
 #include <u8g2.h>
 #include "u8g2_esp32_hal.h"
 #include "addon.h"
-
 #include "eeprom.h"
-
-/////////////////////////////////////////////////////
-///////////////////////////
 #include "driver/gpio.h"
 #include "driver/i2c.h"
-
 #include "nvs_flash.h"
 #include "gpio.h"
 #include "servers.h"
@@ -42,7 +36,6 @@ Copyright (C) 2017  KaraWin
 #include "vs10xx.h"
 #include "ClickEncoder.h"
 #include "addon.h"
-//#include "rda5807Task.h"
 #include "es8311.h"                                                                                                                                           │······
 #include "esp_log.h"                                                                                                                                          │······
 #include "audio_hal.h"                                                                                                                                        │······
@@ -51,11 +44,8 @@ Copyright (C) 2017  KaraWin
 #include "audio_player.h"                                                                                                                                     │······
 #include "audio_mem.h"                                                                                                                                        │······
 #include "board.h"                                                                                                                                            │······
-//#include "z138063.h"
-/* The event group allows multiple bits for each event*/
-//   are we connected  to the AP with an IP? */
+
 const int CONNECTED_BIT = 0x00000001;
-//
 const int CONNECTED_AP = 0x00000010;
 
 #define TAG "main"
