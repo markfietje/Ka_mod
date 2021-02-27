@@ -18,7 +18,7 @@
 #include "fdk_aac_decoder.h"
  //#include "helix_aac_decoder.h"
  //#include "libfaad_decoder.h"
-#include "mp3_decoder.h"
+#include "mp3_decoderv2.h"
 #include "webclient.h"
 #include "vs10xx.h"
 #include "app_main.h"
@@ -49,8 +49,8 @@ static int start_decoder_task(player_t* player)
 		switch (player->media_stream->content_type)
 		{
 		case AUDIO_MPEG:
-			task_func = mp3_decoder_task;
-			task_name = (char*)"mp3_decoder_task";
+			task_func = mp3_decoder_taskv2;
+			task_name = (char*)"mp3_decoder_taskv2";
 			stack_depth = 8448;
 			break;
 

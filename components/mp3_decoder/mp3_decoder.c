@@ -24,7 +24,7 @@
 #include "audio_renderer.h"
 #include "audio_player.h"
 #include "spiram_fifo.h"
-#include "mp3_decoder.h"
+#include "mp3_decoderv2.h"
 #include "common_buffer.h"
 
 #define TAG "decoder"
@@ -109,7 +109,7 @@ static enum mad_flow error(void *data, struct mad_stream *stream, struct mad_fra
 
 //This is the main mp3 decoding task. It will grab data from the input buffer FIFO in the SPI ram and
 //output it to the I2S port.
-void mp3_decoder_task(void *pvParameters)
+void mp3_decoder_taskv2(void *pvParameters)
 {
     player_t *player = pvParameters;
 

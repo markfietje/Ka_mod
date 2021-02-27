@@ -5,4 +5,4 @@
  *      Author: michaelboeckling
  */
 
-void mp3_decoder_task(void *pvParameters);
+void mp3_decoder_taskv2(void *pvParameters);

@@ -1,0 +1,8 @@
+
+build error finding structure tcpip_adapter_ip_info_t   (adf path /home/user/esp/esp/adf/components/wifi_service/airkiss_config/
+
+This is defined in IDF tcpip_adapter.h
+
+Investigate why this is missing according to build process..
+
+
