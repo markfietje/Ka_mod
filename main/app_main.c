@@ -892,7 +892,7 @@ void app_main()
     es8311_codec_init(&es8311_cfg);
     es8311_codec_config_i2s(es8311_cfg.codec_mode, &es8311_cfg.i2s_iface);
     es8311_codec_ctrl_state(AUDIO_HAL_CODEC_MODE_DECODE, AUDIO_HAL_CTRL_START);
-    es8311_codec_set_voice_volume(50);
+    es8311_codec_set_voice_volume(35);
 	
 	
 	
