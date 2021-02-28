@@ -29,7 +29,7 @@
 
 static const char *TAG = "AUDIO_HAL";
 
-void *audio_calloc(size_t nmemb, size_t size)
+void *audio_callocka(size_t nmemb, size_t size)
 {
     void *data = NULL;
     if (xPortGetFreeHeapSize() > 0x80000)
@@ -57,7 +57,7 @@ void *audio_calloc(size_t nmemb, size_t size)
 audio_hal_handle_t audio_hal_init(audio_hal_codec_config_t *audio_hal_conf, audio_hal_func_t *audio_hal_func)
 {
     esp_err_t ret = 0;
-    audio_hal_handle_t audio_hal = (audio_hal_handle_t)audio_calloc(1, sizeof(audio_hal_func_t));
+    audio_hal_handle_t audio_hal = (audio_hal_handle_t)audio_callocka(1, sizeof(audio_hal_func_t));
     AUDIO_MEM_CHECK(TAG, audio_hal, return NULL);
     memcpy(audio_hal, audio_hal_func, sizeof(audio_hal_func_t));
     audio_hal->audio_hal_lock = mutex_create();

@@ -24,7 +24,7 @@ audio_board_handle_t a101_board_init(void)
 		ESP_LOGW(AC101_TAG, "The board has already been initialized!");
 		return board_handle;
 	}
-	board_handle = (audio_board_handle_t)audio_calloc(1, sizeof(struct audio_board_handle));
+	board_handle = (audio_board_handle_t)audio_callocka(1, sizeof(struct audio_board_handle));
 	AUDIO_MEM_CHECK(AC101_TAG, board_handle, return NULL);
 	board_handle->audio_hal = a101_codec_init();
 	return board_handle;

@@ -40,7 +40,7 @@ extern "C" {
 #define mutex_create()      xSemaphoreCreateMutex()
 #define mutex_destroy(x)    vSemaphoreDelete(x)
 
-void *audio_calloc(size_t nmemb, size_t size);
+void *audio_callocka(size_t nmemb, size_t size);
 
 
 typedef struct audio_hal *audio_hal_handle_t;
