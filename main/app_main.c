@@ -36,14 +36,12 @@ Copyright (C) 2017  KaraWin
 #include "vs10xx.h"
 #include "ClickEncoder.h"
 #include "addon.h"
-#include "es8311.h"                                                                                                                                           │······
-#include "esp_log.h"                                                                                                                                          │······
-#include "audio_hal.h"                                                                                                                                        │······
-#include "unity.h"                                                                                                                                            │······
-#include "es8388.h"                                                                                                                                           │······
-#include "audio_player.h"                                                                                                                                     │······
-#include "audio_mem.h"                                                                                                                                        │······
-#include "board.h"                                                                                                                                            │······
+#include "es8311.h"                                                                                                                                           #include "esp_log.h"                                                                                                                                          
+#include "audio_hal.h"                                                                                                                            ddd│··i····
+##include "unity.h"                                                                                                                                           
+#include "es8388.h"                                                                                                                                          ·
+#include "audio_player.h"                                                                                                                                     #include "audio_mem.h"                                                                                                                                        
+#include "board.h"                                                                                                                                    │······
 
 const int CONNECTED_BIT = 0x00000001;
 const int CONNECTED_AP = 0x00000010;
