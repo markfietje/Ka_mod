@@ -7,6 +7,7 @@ idf_component_register(
 	"addonucg.c"
 	"app_main.c"
 	"audio_hal.c"
+	#	"es8311.c"
 	#	//"board_pins_config.c"
 	"cencode.c"
 	"ClickButtons.c"
