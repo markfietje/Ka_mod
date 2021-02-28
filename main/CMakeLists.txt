@@ -7,7 +7,6 @@ idf_component_register(
 	"addonucg.c"
 	"app_main.c"
 	"audio_hal.c"
-	#	"es8311.c"
 	#	//"board_pins_config.c"
 	"cencode.c"
 	"ClickButtons.c"
@@ -33,8 +32,6 @@ idf_component_register(
 	"../components/audio_renderer/audio_renderer.c"
 	
 	"../components/common/common_buffer.c"
-	
-	"../components/fdk-aac_decoder/fdk_aac_decoder.c"
 	
 	"../components/fifo/spiram_fifo.c"
 	
@@ -188,10 +185,13 @@ idf_component_register(
 	
 	"../components/xpt2046/xpt2046.c"
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 2cfba2bad246816c3ebdfe68940e1d06dc09763f
 )
 
 include_directories(
